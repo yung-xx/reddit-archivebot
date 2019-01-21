@@ -1,0 +1,23 @@
+<div class="content-dis">
+<p><span class='param'>SUBREDDIT</span></p>
+<p><span class='param code'><i class="fas fa-keyboard"></i>subreddit</span>&nbsp;&nbsp;<u>required</u>, filter by subreddit.</p>
+<p><span class='param code'><i class="far fa-calendar-alt"></i>from</span>&nbsp;&nbsp;<u>required</u>, starting datetime.</p>
+<p><span class='param code'><i class="far fa-calendar-alt"></i>to</span>&nbsp;&nbsp;<u>not required</u>, ending datetime.</p>
+<br>
+<p><span class='param'>ADVANCED</span></p>
+<p><span class='param code'><i class="fas fa-keyboard"></i>max. connections</span>&nbsp;&nbsp;<u>required</u>, max. number of simultaneous connections allowed, or how many posts are requested at a time – it is set to 200 by default and capped at 1,000 for performance reasons.<br><small style="display:block;margin-top:8px;">Note: <i>it is not advised to change this value. When too many requests are sent at once, Reddit may take too long to respond and timeout, returning empty responses instead of content. Such responses are not archived. If this happens, an error message is displayed. You may enable SMART and retry to request any submissions that were not served.</i></small></p>
+<p><span class='param code'><i class="fas fa-keyboard"></i>timeout</span>&nbsp;&nbsp;<u>required</u>, max. time in seconds that any given request is allowed to take – it is set to 30 seconds by default and capped at 60.<br><small style="display:block;margin-top:8px;">Note: <i>this is useful for preventing requests from hanging for long periods of time. However, too low of a value may cause requests to timeout prematurely.</i></small></p>
+<p><span class='param code'><i class="fas fa-keyboard"></i>author</span>&nbsp;&nbsp;<u>not required</u>, filter by author – use ! to negate; comma delimited for multiples.<br><small style="display:block;margin-top:8px;">Example: <i><u>!yung_xx</u> (not 'yung_xx') or <u>automoderator, yung_xx</u> ('automoderator' and 'yung_xx').</i></small></p>
+<p><span class='param code'><i class="fas fa-keyboard"></i>keyword</span>&nbsp;&nbsp;<u>not required</u>, filter by keyword – use ! to negate; logical operators allowed.<br><small style="display:block;margin-top:8px;">Example: <i><u>hello+world</u> (both 'hello' and 'world'), <u>hello|world</u> ('hello', 'world' or both), <u>hello-world</u> ('hello' but not 'world'), <u>"hello world"</u> (exactly 'hello world') or more complex combinations grouped using parentheses.</i></small></p>
+<p><span class='param code'><i class="fas fa-keyboard"></i>score</span>&nbsp;&nbsp;<u>not required</u>, filter by score – comma delimited for multiples; greater/less than operators allowed.<br><small style="display:block;margin-top:8px;">Example: <i><u>>30,<50</u> (greater than 30, less than 50) or <u>40</u> (exactly 40)</i></small></p>
+<br>
+<p><span class='param'>ACTIONS</span></p>
+<p><span class='param code'><i class="fas fa-toggle-on"></i>list-only</span>&nbsp;&nbsp;<u>checked by default</u>, submissions are retrieved and listed from oldest to newest.</p>
+<p><span class='param code'><i class="fas fa-toggle-on"></i>backup</span>&nbsp;&nbsp;<u>if checked</u>, submissions are also archived.</p>
+<br>
+<p><span class='param'>OPTIONAL</span></p>
+<p><span class='param code'><i class="fas fa-check-square"></i>smart</span>&nbsp;&nbsp;<u>if enabled</u>, submissions that have already been archived are filtered out, regardless of whether they have been updated since.<br><small style="display:block;margin-top:8px;">Note: <i>I expect this to change as soon as the new Pushshift API is released – SMART should then be able to check whether any given submission has been updated since it was last archived in a reliable manner.</i></small></p>
+<p><span class='param code'><i class="fas fa-check-square"></i>simple</span>&nbsp;&nbsp;<u>if enabled</u>, stripped-down filters are used to allow for faster content retrieval and reduced memory usage.</p>
+<p><span class='param code'><i class="fas fa-check-square"></i>compression</span>&nbsp;&nbsp;<u>if enabled</u>, a zip file for the target subreddit is created or updated.</p>
+<p><span class='param code'><i class="fas fa-check-square"></i>debug</span>&nbsp;&nbsp;<u>if enabled</u>, key variables and values are displayed for debugging purposes.</p>
+</div>
